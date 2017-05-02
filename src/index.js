@@ -16,7 +16,12 @@ app.get('/all.js', (req, res) => {
 
 app.get('/cur.js', (req, res) => {
   const timestamp = Object.keys(req.query)[0];
-  const data = fs.readFileSync(`${basePath}/cur.js_${timestamp}`);
+  const filename = `${basePath}/cur.js_${timestamp}`;
+  if (!fs.existsSync(filename)) {
+    res.sendStatus(404);
+    return;
+  }
+  const data = fs.readFileSync(filename);
   res.setHeader('Content-Type', 'application/javascript');
   res.send(data);
 });
