@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const basePath = '../spike/timing-spike/sessions/2017-04-16_1545';
+const basePath = '../sessions/2017-Bahrain-RACE-Part1';
 
 app.get('/', (req, res) => {
   res.send(`Timing replayer for ${basePath}`);
@@ -26,6 +26,6 @@ app.get('/cur.js', (req, res) => {
   res.send(data);
 });
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(9000, () => {
+  console.log('Replayer listening on port 9000!');
 });
