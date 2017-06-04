@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "main": "node src/index.js",
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 src/index.js",
+    "stop": "forever stop src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,7 +16,8 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "forever": "^0.15.3"
   },
   "dependencies": {
     "express": "^4.15.2"
