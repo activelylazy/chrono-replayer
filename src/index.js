@@ -2,7 +2,9 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
-const basePath = '../sessions/2017-R03-Bahrain-RACE-Part1';
+
+const config = JSON.parse(fs.readFileSync('replayer.json'));
+const basePath = config.basePath;
 
 app.get('/', (req, res) => {
   res.send(`Timing replayer for ${basePath}`);
